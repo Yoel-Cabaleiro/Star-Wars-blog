@@ -1,0 +1,97 @@
+@font-face {
+    font-family: andromeda;
+    src: url(./AquireLight-YzE0o.otf);
+}
+
+.planet {
+    position: relative;
+    top: -200px;
+    left: -100px;
+}
+.planet img{
+    position: absolute;
+    width: 50%;
+    min-width: 400px;
+}
+.ship{
+    position: relative;
+    left: 35%;
+    top: 180px;
+}
+.ship img{
+    position: relative;
+    width: 55%;
+    min-width: 400px;
+    transform: scaleX(-1);
+}
+.title{
+    position: absolute;
+    display: block;
+    justify-content: end;
+    align-items: end;
+    width: 50%;
+    left: 50%;
+    top: 70px;
+}
+.title h1{
+    position: relative;
+    color: white;
+    font-size: 6vw;
+    font-family: andromeda;
+}
+.title img{
+    width: 150px;  
+}
+
+@media (max-width: 600px) {
+    .title{
+        position: absolute;
+        display: block;
+        justify-content: end;
+        align-items: end;
+        width: 90%;
+        left: 10%;
+        top: 620px;
+    }
+    .title h1{
+        position: relative;
+        color: white;
+        font-size: 12vw;
+        font-family: andromeda;
+    }
+    .ship{
+        position: relative;
+        left: 20%;
+        top: 180px;
+    }
+    .ship img{
+        position: relative;
+        width: 55%;
+        min-width: 400px;
+        transform: scaleX(-1);
+    }
+  }
+@media (max-height: 480px) {
+    .ship{
+        position: relative;
+        left: 35%;
+        top: 80px;
+    }
+    .ship img{
+        position: relative;
+        width: 55%;
+        min-width: 400px;
+        transform: scaleX(-1);
+    }
+    .title{
+        position: absolute;
+        display: block;
+        justify-content: end;
+        align-items: end;
+        width: 90%;
+        left: 50%;
+        top: 50px;
+    }
+    
+  }
+  
