@@ -13,6 +13,7 @@ import { NotFound } from "./views/NotFound.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/Navbar.jsx";
+import { Footer } from "./component/Footer.jsx";
 
 /* import { Footer } from "./component/Footer.jsx"; */
 
@@ -37,6 +38,7 @@ const Layout = () => {
 						<Route path="*" element={<NotFound/>} /> 
 					</Routes>
 					
+					<Footer/>
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

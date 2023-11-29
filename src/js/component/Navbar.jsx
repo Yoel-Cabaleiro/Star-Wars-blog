@@ -2,6 +2,10 @@ import React, {useContext} from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-regular-svg-icons'
+import { element } from "prop-types";
+
 export const Navbar = () => {
   const {store, actions} = useContext(Context)
 
@@ -14,6 +18,24 @@ export const Navbar = () => {
       return `/starships/${item.uid}`;
     }
   };
+
+  const handleActive = () => {
+    if(store.favourites.length > 0){
+      return "vital-icon-active"
+    }
+    else{
+      return "vital-icon"
+    }
+  }
+
+  const handleDisplay = () => {
+    if(store.favourites.length > 0){
+      return "number"
+    }
+    else{
+      return "number-inactive"
+    }
+  }
 
 	return (
 	<nav className="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
@@ -34,8 +56,8 @@ export const Navbar = () => {
           <li className="nav-item mx-2">
             <Link to="/starships" className="nav-link">Starships</Link>
           </li>
-          <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Vital Data</a>
+          <li className="nav-item dropdown ms-2">
+            <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><FontAwesomeIcon icon={faStar} className={handleActive()}/>Vital Data<div className={handleDisplay()}>{store.favourites.length}</div></a>
             <ul className="dropdown-menu dropdown-menu-lg-end">
               {store.favourites.map((item, index) => {
                 return (<li key={index}><Link className="dropdown-item" to={getPath(item)}>{item.name}</Link></li>)

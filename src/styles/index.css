@@ -27,3 +27,31 @@ html{
 .navbar-brand{
     font-size: 30px;
 }
+.nav-link{
+    position: relative;
+}
+.number{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: yellow;
+}
+.number-inactive{
+    display: none;
+}
+
+.vital-icon{
+    font-size: 30px;
+}
+.vital-icon-active{
+    font-size: 30px;
+    color: yellow;
+
+}
+
+.footer{
+    font-family: andromeda;
+    color: white;
+    z-index: 30;
+}
