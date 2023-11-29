@@ -2,6 +2,9 @@
     font-family: andromeda;
     src: url(./AquireLight-YzE0o.otf);
 }
+.home-container{
+    height: 100vh;
+}
 
 .planet {
     position: relative;

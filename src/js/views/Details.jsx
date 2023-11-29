@@ -36,7 +36,8 @@ export const Details = () =>{
         <div>
             {type === "people" && type ? 
                 <CharacterDetails/> : type === "planets" && type ? 
-                    <PlanetDetails/> : type ==="starships" ? <StarshipsDetails/> : navigate("*")  }
+                    <PlanetDetails/> : type ==="starships" ? 
+                        <StarshipsDetails/> : navigate("*")  }
         </div>
     )    
 }
