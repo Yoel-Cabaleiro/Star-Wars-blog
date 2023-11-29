@@ -1,13 +1,29 @@
-body{
-    background: url("https://img.freepik.com/free-photo/low-angle-shot-mesmerizing-starry-sky_181624-27925.jpg?w=1380&t=st=1700654989~exp=1700655589~hmac=6176942158ff547ae5237a6968d56738a1fb6e23d80b6d8a40ed9bbe1638feae");
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover;
-    position: relative;
-} 
-body, html{
-    overflow: hidden;
+@font-face {
+    font-family: andromeda;
+    src: url(./AquireLight-YzE0o.otf);
 }
+body{
+    background: url("https://static.vecteezy.com/system/resources/thumbnails/001/623/177/original/sci-fi-deep-space-background-loop-free-video.jpg");
+    background-position: center;
+    background-repeat: repeat; 
+    background-size:cover;
+    position: relative;
+    overflow:auto;
+    overflow-x: hidden;
+    
+} 
+html{
+    overflow: auto;
+    overflow-x: hidden;
+
+} 
 .navbar{
     z-index: 1000;
+    background: transparent !important;
+    color: white !important;
+    font-family: andromeda;
+    font-size: 24px;
+}
+.navbar-brand{
+    font-size: 30px;
 }

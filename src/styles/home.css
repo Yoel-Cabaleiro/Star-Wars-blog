@@ -7,22 +7,27 @@
     position: relative;
     top: -200px;
     left: -100px;
+    animation: planet-load 2s ease-in-out;
 }
 .planet img{
     position: absolute;
     width: 50%;
     min-width: 400px;
+    transform: scaleX(-1);
 }
 .ship{
     position: relative;
-    left: 35%;
+    left: 40%;
     top: 180px;
+    animation: ship-load 2s ease-in-out;
+    
 }
 .ship img{
     position: relative;
     width: 55%;
     min-width: 400px;
     transform: scaleX(-1);
+    
 }
 .title{
     position: absolute;
@@ -32,6 +37,7 @@
     width: 50%;
     left: 50%;
     top: 70px;
+    animation: title-load 4s ease-in;
 }
 .title h1{
     position: relative;
@@ -63,12 +69,13 @@
         position: relative;
         left: 20%;
         top: 180px;
+        animation: ship-load-sm 2s ease-in-out;
     }
     .ship img{
         position: relative;
         width: 55%;
         min-width: 400px;
-        transform: scaleX(-1);
+        /* transform: scaleX(-1); */
     }
   }
 @media (max-height: 480px) {
@@ -76,12 +83,14 @@
         position: relative;
         left: 35%;
         top: 80px;
+        animation: ship-load-sm-wide 2s ease-in-out;
+        
     }
     .ship img{
         position: relative;
         width: 55%;
         min-width: 400px;
-        transform: scaleX(-1);
+        /* transform: scaleX(-1); */
     }
     .title{
         position: absolute;
@@ -93,5 +102,53 @@
         top: 50px;
     }
     
+  }
+  @keyframes ship-load {
+    from{
+        left: 100%;
+        top: 180px;
+    }
+    to{
+        left: 40%;
+        top: 180px;
+    }
+  }
+  @keyframes ship-load-sm{
+    from{
+        left: 85%;
+        top: 180px;
+    }
+    to{
+        left: 20%;
+        top: 180px;
+    }
+  }
+  @keyframes ship-load-sm-wide{
+    from{
+        left: 85%;
+        top: 80px;
+    }
+    to{
+        left: 35%;
+        top: 80px;
+    }
+  }
+  @keyframes planet-load{
+    from{
+        top: -400px;
+        left: -600px;
+    }
+    to{
+        top: -200px;
+        left: -100px;
+    }
+  }
+  @keyframes title-load{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
   }
   

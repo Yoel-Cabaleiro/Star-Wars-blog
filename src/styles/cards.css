@@ -1,0 +1,214 @@
+@font-face {
+    font-family: andromeda;
+    src: url(./AquireLight-YzE0o.otf);
+}
+.container h1{
+    font-family: andromeda;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-shadow: 0px 0px 5px white, 0px 0px 8px white;
+    
+ 
+}
+
+.screen {
+    border: 3px solid #306ba3;
+    aspect-ratio: 10 / 14;
+    border-radius: 1rem;
+    background-color: #306ba366;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.screen-image {
+    width: 200%;
+    height: 200%;
+    filter: sepia(100%) hue-rotate(130deg);
+    opacity: 0.6;
+    position: relative;
+    transition: 1s;
+    object-position: center;
+    
+}
+.screen-image-error {
+    width: 200%;
+    height: 200%;
+    filter: sepia(100%) hue-rotate(130deg);
+    opacity: 1;
+    position: absolute;
+}
+.screen-image-error::after{
+    content: "Image Corrupted";
+    font-family: andromeda;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: white;
+    text-shadow: 0px 0px 5px white, 0px 0px 8px white;
+    text-align: center;
+
+
+}
+.screen-image img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: animate-img 30s linear infinite;
+    object-fit: cover;
+ 
+}
+.screen:hover  .screen-image,
+.screen:active  .screen-image{
+    width: 100%;
+    height: 100%;
+    filter: none;
+    
+    
+}
+
+.screen:hover  .screen-image img,
+.screen:active  .screen-image img{
+    animation: none;
+}
+.screen-overlay{
+    background-size: 100% 7px !important;
+    background: linear-gradient(
+        #306ba348,
+        #306ba348 3px,
+        transparent 3px,
+        transparent 5px
+    );
+    width: 100%;
+    height: 100%;
+    animation: animated-bg 22s infinite linear;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+}
+.screen-content{
+    position: absolute;
+    z-index: 3;
+    left: 2.5%;
+    top: 1.5%;
+    width: 95%;
+    height: 97%;
+    border: 1px solid #306ba3;
+    border-radius: 1rem;
+}
+.name {
+    font-family: andromeda;
+    color: white;
+    text-align: center;
+    top: 80%;
+    position: relative;
+    font-size: 20px;
+    
+}
+
+.options{
+    opacity: 0;
+    font-size: 20px;
+    transition: 2s;
+}
+.screen:hover .options{
+    opacity: 1;
+}
+
+
+.details{
+    position: absolute;
+    left: 5%;
+    color: white;
+}
+.favourites{
+    position: absolute;
+    left: 85%;
+    overflow: hidden;
+    color: white;
+}
+.favourites-true{
+    color: yellow;
+    position: absolute;
+    left: 85%;
+    overflow: hidden;
+
+}
+.details:hover,
+.favourites:hover{
+    color: yellow;
+}
+.screen button {
+    visibility: none;
+
+}
+.screen button i{
+    visibility: visible ;
+}
+
+
+
+@keyframes animated-bg {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to{
+        background-position: 0% -100%;
+    }
+}
+@keyframes animate-img {
+    0% {
+        transform: scale(1.2) translate(-30px, 0);
+    }
+    25% {
+        transform: scale(1.4) translate(30px, 0);
+    }   
+    50% {
+        transform: scale(1.2) translate(0, 40px);
+    }
+    75% {
+        transform: scale(1.2) translate(-150px, -150px);
+    }
+    100% {
+        transform: scale(1) translate(0, 0px);
+    }
+}
+
+@media (max-width: 760px){
+    .screen-image-error::after{
+        content: "Image Corrupted";
+        font-family: andromeda;
+        font-size: 30px;
+        position: absolute;
+        top: 20%;
+        left: 3.5%;
+        color: white;
+        text-shadow: 0px 0px 5px white, 0px 0px 8px white;
+    }
+    .options{
+        opacity: 1;
+    }
+}
+@media (max-height: 500px){
+    .screen-image-error::after{
+        content: "Image Corrupted";
+        font-family: andromeda;
+        font-size: 30px;
+        position: absolute;
+        top: 20%;
+        left: 3.5%;
+        color: white;
+        text-shadow: 0px 0px 5px white, 0px 0px 8px white;
+    }
+    .options{
+        opacity: 1;
+    }
+}

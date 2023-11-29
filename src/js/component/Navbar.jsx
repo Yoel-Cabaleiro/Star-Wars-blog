@@ -1,17 +1,53 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+  const {store, actions} = useContext(Context)
+
+  const getPath = (item) => {
+    if (item.url.includes("people")) {
+      return `/people/${item.uid}`;
+    } else if (item.url.includes("planets")) {
+      return `/planets/${item.uid}`;
+    } else {
+      return `/starships/${item.uid}`;
+    }
+  };
+
 	return (
-		<nav className="navbar navbar-light bg-transparent mb-3">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
-			</div>
-		</nav>
+	<nav className="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+    <div className="container-fluid">
+      <Link className="navbar-brand" to="/">The Archives</Link>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      <div className="collapse navbar-collapse" id="navbarsExample07">
+        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li className="nav-item mx-2">
+            <Link className="nav-link" aria-current="page" to="/characters">Characters</Link>
+          </li>
+          <li className="nav-item mx-2">
+            <Link className="nav-link" to="/planets">Planets</Link>
+          </li>
+          <li className="nav-item mx-2">
+            <Link to="/starships" className="nav-link">Starships</Link>
+          </li>
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Vital Data</a>
+            <ul className="dropdown-menu dropdown-menu-lg-end">
+              {store.favourites.map((item, index) => {
+                return (<li key={index}><Link className="dropdown-item" to={getPath(item)}>{item.name}</Link></li>)
+              })}
+              
+              
+            </ul>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
 	);
 };

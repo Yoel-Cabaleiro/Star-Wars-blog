@@ -1,7 +1,6 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import Planet from "../../img/planet.png"
+import Planet from "../../img/planet1.png"
 import Ship from "../../img/ship.png"
 import Logo from "../../img/logostarwars.png"
 
@@ -18,8 +17,6 @@ export const Home = () => {
 				<img src={Logo}></img>
 				<h1>The Archives</h1>
 			</div>
-		</div>
-		
-		
+		</div>	
 	)
 	};
